@@ -31,7 +31,14 @@
         <li></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-     
+        <div class="container">
+          <div class="pull-right">
+            <% if user_signed_in? %>
+              <p class="welcome">Welcome, <%= current_user.username %>! 
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "header" %></p>
+            <% end %>
+          </div>
+        </div>
       </ul> 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
