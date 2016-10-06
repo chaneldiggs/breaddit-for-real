@@ -31,11 +31,23 @@
         <li></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
      <% if user_signed_in? %>
            <li class="active"><%= link_to "Sign out #{current_user.email}", destroy_user_session_path, method: :delete, class: "navbar navbar-nav navbar-right" %></li>
      <% end %>
      </ul>
 
+=======
+        <div class="container">
+          <div class="pull-right">
+            <% if user_signed_in? %>
+              <p class="welcome">Welcome, <%= current_user.username %>! 
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "header" %></p>
+            <% end %>
+          </div>
+        </div>
+      </ul> 
+>>>>>>> c3678b8c91e2be711c8fad4e05ab7f39be643107
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
