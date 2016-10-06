@@ -12,23 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, placeholder: "Title", autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.hidden_field :username, value: current_user.username %>
   </div>
 
   <div class="field">
-    <%= f.label :breaddit_post %>
-    <%= f.text_area :breaddit_post %>
+    <%= f.text_area :breaddit_post, placeholder: "Type your post here..." %>
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="actions">
