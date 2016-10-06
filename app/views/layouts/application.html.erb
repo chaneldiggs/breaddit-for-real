@@ -31,8 +31,11 @@
         <li></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-     
-      </ul> 
+     <% if user_signed_in? %>
+           <li class="active"><%= link_to "Sign out #{current_user.email}", destroy_user_session_path, method: :delete, class: "navbar navbar-nav navbar-right" %></li>
+     <% end %>
+     </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
