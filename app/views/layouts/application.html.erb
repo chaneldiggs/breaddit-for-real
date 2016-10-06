@@ -31,14 +31,10 @@
         <li></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <div class="container">
-          <div class="pull-right">
             <% if user_signed_in? %>
-              <p class="welcome">Welcome, <%= current_user.username %>! 
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "header" %></p>
+              <li><div class="navbartextpad">Welcome, <%= current_user.username %>!</div></li> 
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav navbar-nav navbar-right" %></li>
             <% end %>
-          </div>
-        </div>
       </ul> 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
