@@ -37,6 +37,16 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def like_article
+    Article.find(params[:id])
+    redirect_to :back
+  end
+
+  def dislike_article
+    Article.find(params[:id])
+    redirect_to :back
+  end
+
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
@@ -69,6 +79,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :username, :breaddit_post, :user_id)
+      params.require(:article).permit(:title, :username, :breaddit_post, :user_id, :score)
     end
 end
