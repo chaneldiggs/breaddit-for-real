@@ -15,6 +15,14 @@ gem 'mini_magick'
 gem 'geocoder'
 gem 'figaro'
 gem 'devise'
+
+gem 'rubocop', require: false
+
+group :development do
+gem "better_errors"
+end
+gem "binding_of_caller"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
