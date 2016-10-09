@@ -73,12 +73,10 @@ class ArticlesController < ApplicationController
 
   private
 
-<<<<<<< HEAD
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :username, :breaddit_post, :user_id, :score)
     end
-=======
   # Use callbacks to share common setup or constraints between actions.
   def set_article
     @article = Article.find(params[:id])
@@ -88,5 +86,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :username, :breaddit_post, :user_id)
   end
->>>>>>> kyle
 end
