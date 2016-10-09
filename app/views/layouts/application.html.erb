@@ -21,24 +21,27 @@
         <span class="icon-bar"></span>
       </button>
      
-			<%= link_to "Home", root_path, class: 'navbar-brand' %>
+			<%= link_to "Home", root_path,  class: 'navbar-brand' %><span class="badge">23</span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"> <%= link_to 'New Post', new_article_path, class: 'nav navbar-nav navbar-right' %></li>
-        <li></li>
-      </ul>
+        <li class="active"><%= link_to 'New Comments', new_comment_path, class: 'nav navbar-nav navbar-center' %><span class="badge">23</span></li>
       <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li><div class="navbartextpad">Welcome, <%= current_user.username %>!</div></li> 
               <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav navbar-nav navbar-right" %></li>
             <% end %>
       </ul> 
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+
   <div class="container">
     <%= yield %>
     </div>
