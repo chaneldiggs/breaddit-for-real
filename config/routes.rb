@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :articles
   root 'welcome#index'
 
-  get 'welcome/about' => 'welcome#about'
+  get 'about' => 'welcome#about'
 
   get 'like_article' => 'articles#like_article'
 
