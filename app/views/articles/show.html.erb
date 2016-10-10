@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="article" data-itemid="427">
+<a href="voteup"   class="vote up"  >Up</a>
+<a href="votedown" class="vote down">Down</a>
+<!-- ...the contents of the item... -->
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>  
@@ -14,6 +19,7 @@
   <strong>Breaddit post:</strong>
   <%= @article.breaddit_post %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> 
 
