@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /articles/new
@@ -38,12 +39,16 @@ class ArticlesController < ApplicationController
   end
 
   def like_article
-    Article.find(params[:id])
+    @article = Article.find(params[:id])
+    @article.score += 1
+    @article.save
     redirect_to :back
   end
 
   def dislike_article
-    Article.find(params[:id])
+    @article = Article.find(params[:id])
+    @article.score.to_i -= 1
+    @article.save
     redirect_to :back
   end
 
@@ -73,20 +78,13 @@ class ArticlesController < ApplicationController
 
   private
 
-<<<<<<< HEAD
+    # Use callbacks to share common setup or constraints between actions.
+    def set_article
+      @article = Article.find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :username, :breaddit_post, :user_id, :score)
     end
-=======
-  # Use callbacks to share common setup or constraints between actions.
-  def set_article
-    @article = Article.find(params[:id])
-  end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def article_params
-    params.require(:article).permit(:title, :username, :breaddit_post, :user_id)
-  end
->>>>>>> kyle
 end
